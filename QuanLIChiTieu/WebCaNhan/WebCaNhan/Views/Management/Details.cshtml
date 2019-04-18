@@ -1,0 +1,42 @@
+﻿@model WebCaNhan.Controllers.QuanLyChiTieuCaNhan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Chi tiết</h2>
+
+<div>
+    <h4>QuanLyChiTieuCaNhan</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ngày
+        </dt>
+
+        <dd>
+            @Model.Date.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt>
+            Tổng tiền
+        </dt>
+
+        <dd>
+            @Model.Amount.ToString("n0")
+        </dd>
+
+        <dt>
+            Chi tiết
+        </dt>
+
+        <dd>
+            @Model.Detail
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Trở về", "Index")
+</p>

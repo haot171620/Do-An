@@ -1,0 +1,48 @@
+﻿@model WebCaNhan.Controllers.QuanLyChiTieuCaNhan
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Bạn có muốn xoá mục chi tiêu này không?</h3>
+<div>
+    <h4>QuanLyChiTieuCaNhan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Ngày
+        </dt>
+
+        <dd>
+            @Model.Date.ToString("dd/MM/yyyy")
+        </dd>
+
+        <dt>
+            Tổng tiền
+        </dt>
+
+        <dd>
+            @Model.Amount.ToString("n0")
+        </dd>
+
+        <dt>
+            Chi tiết
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Detail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoá" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>
